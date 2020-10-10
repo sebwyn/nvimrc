@@ -1,0 +1,12 @@
+let path = expand('/Users/sebastianwyngaard/.config/nvim')
+exec 'source '. path .'/'.'basics.vim'
+exec 'source '. path .'/'.'dein.vim'
+exec 'source '. path .'/'.'sessconf.vim'
+exec 'source '. path .'/'.'mappings.vim'
+exec 'source '. path .'/'.'aesthetic.vim'
+exec 'source '. path .'/'.'fileconfig.vim'
+exec 'source '. path .'/'.'nvimlsp.vim'
+exec 'source '. path .'/'.'quickscope.vim'
+exec 'source '. path .'/'.'fzf.vim'
+exec 'source '. path .'/'.'start_screen.vim'
+exec 'source '. path .'/'.'better_cpp.vim'
