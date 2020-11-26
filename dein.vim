@@ -13,9 +13,7 @@ if dein#load_state('/Users/sebastianwyngaard/.local/share/dein')
     "plugins
     call dein#add('challenger-deep-theme/vim')
 
-    call dein#add('neovim/nvim-lspconfig')
-    call dein#add('nvim-lua/completion-nvim')
-    call dein#add('nvim-lua/diagnostic-nvim')
+    call dein#add('neoclide/coc.nvim', {'merged': 0, 'rev': 'release'})
     call dein#add('junegunn/fzf', {'build': './install', 'merged': 0})
     call dein#add('junegunn/fzf.vim', {'depends': 'junegunn/fzf'})
     call dein#add('stsewd/fzf-checkout.vim')
@@ -33,6 +31,8 @@ if dein#load_state('/Users/sebastianwyngaard/.local/share/dein')
     call dein#add('junegunn/goyo.vim')
     call dein#add('justinmk/vim-sneak')
     call dein#add('airblade/vim-gitgutter')
+    "call dein#add('aurieh/discord.nvim')
+    call dein#add('kyazdani42/nvim-web-devicons')
 
     "I really hope they make treesitter usable soon, way too slow and buggy rn
     "call dein#add('nvim-treesitter/nvim-treesitter', { 'merged' : 0 })
