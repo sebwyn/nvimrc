@@ -8,10 +8,9 @@ nmap <leader>ww :e /Users/sebastianwyngaard/.local/share/nvim/session<CR>
 
 function ConstructSessionName()
     let s:cwd=getcwd()
-    let s:name=join(split(s:cwd, '/'), '_') 
+    let s:name=input('Name your session:')
 
-    let s:session =
-    '/Users/sebastianwyngaard/.local/share/nvim/session/'.s:name.'.vim'
+    let s:session = '/Users/sebastianwyngaard/.local/share/nvim/session/'.s:name.'.vim'
     return s:session
 endfunction
 

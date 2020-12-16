@@ -28,7 +28,7 @@ set nowritebackup
 set cursorline
 
 set scrolloff=8
-set mouse=a
+set mouse=
 set cmdheight=1
 
 set updatetime=50

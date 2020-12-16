@@ -4,6 +4,8 @@ set signcolumn=yes
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
+set background=dark
+colorscheme daycula
 
 function! s:customize() abort
     hi! link LineNr NonText
@@ -23,18 +25,16 @@ augroup END
 hi! ColorColumn ctermbg=magenta 
 call matchadd('ColorColumn', '\%81v', 100)
 
-hi link Folded NonText
-hi! link SignColumn NonText
+hi! link Folded NonText
+"hi! link SignColumn NonText
 hi! link CocErrorSign Statement 
 
-let g:gitgutter_set_sign_backgrounds = 1
-
-colorscheme challenger_deep
+let g:gitgutter_set_sign_backgrounds = 0
 let g:challenger_deep_terminal_italics = 1
 
 "lightline settings
 let g:lightline = {
-      \ 'colorscheme': 'challenger_deep',
+      \ 'colorscheme': 'daycula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

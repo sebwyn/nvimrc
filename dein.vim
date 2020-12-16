@@ -12,6 +12,7 @@ if dein#load_state('/Users/sebastianwyngaard/.local/share/dein')
 
     "plugins
     call dein#add('challenger-deep-theme/vim')
+    call dein#add('ghifarit53/daycula-vim', {'rev' : 'main'}) 
 
     call dein#add('neoclide/coc.nvim', {'merged': 0, 'rev': 'release'})
     call dein#add('junegunn/fzf', {'build': './install', 'merged': 0})
@@ -33,6 +34,9 @@ if dein#load_state('/Users/sebastianwyngaard/.local/share/dein')
     call dein#add('airblade/vim-gitgutter')
     "call dein#add('aurieh/discord.nvim')
     call dein#add('kyazdani42/nvim-web-devicons')
+    call dein#add('mbbill/undotree')
+    call dein#add('voldikss/vim-floaterm')
+    call dein#add('Yggdroot/indentLine')
 
     "I really hope they make treesitter usable soon, way too slow and buggy rn
     "call dein#add('nvim-treesitter/nvim-treesitter', { 'merged' : 0 })

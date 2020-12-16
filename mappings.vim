@@ -54,14 +54,24 @@ nmap - <Plug>(dirvish_up)
 nmap <leader>cc :e ~/.config/nvim/init.vim<CR>
 nmap <leader>cu :so ~/.config/nvim/init.vim<CR>
 
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 " GoTo code navigation.
-nnoremap <leader>ld <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>ly <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>li <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>lr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> <leader>lp :PrevDiagnostic<CR>
-nnoremap <silent> <leader>ln :NextDiagnostic<CR>
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> K show_documentation() 
+nmap <silent> <leader>li <Plug>(coc-implementation)
+nmap <silent> <leader>lr <Plug>(coc-references)
+nmap <silent> <leader>lp <Plug>(coc-diagnostic-previous)
+nmap <silent> <leader>ln <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>lc <Plug>(coc-rename)
 
 "git mappings
 nnoremap <leader>gs :G<CR> :only<CR>
@@ -94,3 +104,9 @@ vnoremap / /\v
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+
+nmap <C-x>j :FloatermToggle 'j'<CR>
+nmap <C-x>k :FloatermToggle 'k'<CR>
+nmap <C-x>l :FloatermToggle 'l'<CR>
+nmap <C-x>; :FloatermToggle ';'<CR>
+tmap <C-x> <C-\><C-n>:FloatermToggle<CR>
